@@ -17,13 +17,10 @@ function init() {
 function reroll() {
   createStars();
   var count = reRoll++;
-  console.log('reRoll', count);
   if(count === 2) {
-    console.log('game over');
     var $lose = $('<p>You Lose! Click Restart to Play Again</p>').addClass('alert');
     $('#message').append($lose);
   } else {
-    console.log('reroll');
     createStars();
   }
 }
@@ -31,9 +28,7 @@ function reroll() {
 function createStars() {
   $('section').empty(); //start by emptying stars
   $('p').empty(); //start by emptying stars
-  console.log('create');
   randNum = Math.ceil(Math.random() * 8); //generate random # of stars
-  console.log("randNum", randNum);
 
   for(var i = 0; i < randNum; i++) {
     var $star = $('<div>').addClass('fa fa-star star fa-5x'); //create stars
@@ -59,16 +54,12 @@ function numClick() {
 function restart() {
   $('section').empty(); //start by emptying stars
   $('p').empty(); //start by emptying stars
-
-  console.log('restart');
   reRoll = 3;
-  //remove selected
-  $('.selected').removeClass('selected');
+  $('.selected').removeClass('selected'); //remove selected
   $('.notInPlay').removeClass('notInPlay');
   createStars();
 }
 function confirm() {
-  console.log('round');
   var numStars = randNum;
   var $selected = $('.selected')
   var clickNum = 0;
@@ -83,14 +74,14 @@ function confirm() {
     var $win = $('<p>You Win This Round!</p>').addClass('alert'); //create msg
     $('#message').append($win); //append msg
     createStars(); //next round
+  } else if($('.notInPlay').length === 9) {
+    $('#message').empty();
+    var $winGame = $('<p>You Win Game! Click Restart to Play Again</p>').addClass('alert');
+    $('#message').append($winGame);
   } else {
     $('.selected').removeClass('selected');
     $('#message').empty();
     var $lose = $('<p>Guess Again!</p>').addClass('alert');
     $('#message').append($lose);
-  } if($('.notInPlay').length === 9) {
-    $('#message').empty();
-    var $winGame = $('<p>You Win Game! Click Restart to Play Again</p>').addClass('alert');
-    $('#message').append($winGame);
   }
 }
