@@ -82,17 +82,14 @@ function confirm() {
     var $win = $('<p>You Win This Round!</p>').addClass('alert'); //create msg
     $('#message').append($win); //append msg
     createStars(); //next round
-  }
-  else {
+  } else if($('.notInPlay').length === 9) {
+      $('#message').empty();
+      var $winGame = $('<p>You Win Game! Click Restart to Play Again</p>').addClass('alert');
+      $('#message').append($winGame);
+    } else {
     $('.selected').removeClass('selected');
     $('#message').empty();
     var $lose = $('<p>Guess Again!</p>').addClass('alert');
     $('#message').append($lose);
-  }
-
-  if($('.notInPlay').length === 9) {
-    $('#message').empty();
-    var $winGame = $('<p>You Win Game! Click Restart to Play Again</p>').addClass('alert');
-    $('#message').append($winGame);
   }
 }
