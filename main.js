@@ -33,7 +33,6 @@ function createStars() {
   for(var i = 0; i < randNum; i++) {
     var $star = $('<div>').addClass('fa fa-star star fa-5x'); //create stars
     $('#holder').append($star); //append to holder
-    // $('#displayCount').text(randNum + " stars").addClass('count');
   }
 }
 
