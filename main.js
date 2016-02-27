@@ -74,9 +74,7 @@ function confirm() {
   var clickNum = 0;
   $selected.each(function() {
     var nextClick = $(this).text();
-    console.log("nextClick", nextClick);
     return clickNum += parseInt(nextClick);
-    console.log("clickNum", clickNum);
   });
 
     if(numStars === clickNum){
