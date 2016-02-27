@@ -69,7 +69,6 @@ function restart() {
 }
 function confirm() {
   console.log('round');
-  // var numStars = $(section).children().length;
   var numStars = randNum;
   var $selected = $('.selected')
   var clickNum = 0;
@@ -80,21 +79,18 @@ function confirm() {
     console.log("clickNum", clickNum);
   });
 
-  if(numStars === clickNum){
+    if(numStars === clickNum){
     $selected.off('click').removeClass('selected').addClass('notInPlay');
     $('#message').empty();
     var $win = $('<p>You Win This Round!</p>').addClass('alert'); //create msg
     $('#message').append($win); //append msg
     createStars(); //next round
-  }
-  else {
+  } else {
     $('.selected').removeClass('selected');
     $('#message').empty();
     var $lose = $('<p>Guess Again!</p>').addClass('alert');
     $('#message').append($lose);
-  }
-
-  if($('.notInPlay').length === 9) {
+  } if($('.notInPlay').length === 9) {
     $('#message').empty();
     var $winGame = $('<p>You Win Game! Click Restart to Play Again</p>').addClass('alert');
     $('#message').append($winGame);
