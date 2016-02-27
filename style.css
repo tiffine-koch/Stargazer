@@ -14,10 +14,23 @@ body {
   color: #ff1aff;
 }
 
+.count {
+  font-size: 20px;
+  height: 50px;
+  width: 100px;
+  color: #ff1aff;
+  border: 5px solid #ff1aff;
+  margin-right: 10px;
+}
+
 .container-fluid {
   margin-top: 50px;
   text-align: center;
   margin-left: 150px;
+}
+
+button {
+  margin-right: 10px;
 }
 
 #buttonRow {
@@ -35,22 +48,8 @@ body {
   font-weight: bold;
   font-style: italic;
   text-align: center;
-  /*position: absolute;*/
 }
-/*.star {
-   position: absolute;
-   display: block;
-   color: red;
-   top: 3px;
-   left: -105px;
-   width: 0px;
-   height: 0px;
-   border-right: 100px solid transparent;
-   border-bottom: 70px solid red;
-   border-left: 100px solid transparent;
-   -webkit-transform: rotate(-70deg);
-   -moz-transform:    rotate(-70deg);
-   -ms-transform:     rotate(-70deg);
-   -o-transform:      rotate(-70deg);
-   content: '';
-}*/
+
+.selected {
+  background-color: #ff1aff;
+}
