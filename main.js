@@ -17,9 +17,7 @@ function init() {
 function reroll() {
   createStars();
   var count = reRoll++;
-  console.log('reRoll', count);
   if(count === 2) {
-    console.log('game over');
     var $lose = $('<p>You Lose! Click Restart to Play Again</p>').addClass('alert');
     $('#message').append($lose);
   } else {
@@ -38,7 +36,6 @@ function createStars() {
   for(var i = 0; i < randNum; i++) {
     var $star = $('<div>').addClass('fa fa-star star fa-5x'); //create stars
     $('#holder').append($star); //append to holder
-    // $('#displayCount').text(randNum + " stars").addClass('count');
   }
 }
 
