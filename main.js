@@ -69,7 +69,6 @@ function restart() {
 }
 function confirm() {
   console.log('round');
-  // var numStars = $(section).children().length;
   var numStars = randNum;
   var $selected = $('.selected')
   var clickNum = 0;
