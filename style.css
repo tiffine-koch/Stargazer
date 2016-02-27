@@ -53,3 +53,15 @@ button {
 .selected {
   background-color: #ff1aff;
 }
+.notInPlay {
+  background-color: #ff33cc;
+}
+
+.alert {
+  margin-top: 30px;
+  font-size: 40px;
+  font-weight: bold;
+  color: #ff1aff;
+  text-align: center;
+  font-style: italic;
+}
