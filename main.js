@@ -28,7 +28,7 @@ function reroll() {
 
 function createStars() {
   $('section').empty(); //start by emptying stars
-  $('p').empty(); //start by emptying stars
+  $('.star').empty(); //start by emptying stars
   console.log('create');
   randNum = Math.ceil(Math.random() * 8); //generate random # of stars
   console.log("randNum", randNum);
