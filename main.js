@@ -27,7 +27,7 @@ function reroll() {
 
 function createStars() {
   $('section').empty(); //start by emptying stars
-  $('p').empty(); //start by emptying stars
+  $('.star').empty(); //start by emptying stars
   randNum = Math.ceil(Math.random() * 8); //generate random # of stars
 
   for(var i = 0; i < randNum; i++) {
@@ -52,7 +52,7 @@ function numClick() {
 
 function restart() {
   $('section').empty(); //start by emptying stars
-  $('p').empty(); //start by emptying stars
+  $('.star').empty(); //start by emptying stars
   reRoll = 3;
   $('.selected').removeClass('selected'); //remove selected
   $('.notInPlay').removeClass('notInPlay');
@@ -70,7 +70,9 @@ function confirm() {
     if(numStars === clickNum){
     $selected.off('click').removeClass('selected').addClass('notInPlay');
     $('#message').empty();
-    var $win = $('<p>You Win This Round!</p>').addClass('alert'); //create msg
+    var $win = $('<p>You Win This Round!</p>').addClass('alert');
+    console.log($win); //create msg
+    // debugger;
     $('#message').append($win); //append msg
     createStars(); //next round
   } else if($('.notInPlay').length === 9) {
